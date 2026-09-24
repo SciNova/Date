@@ -1,5 +1,5 @@
 Package: python3-date
-Version: 1.0~rc1
+Version: 1.0
 Section: python
 Priority: optional
 Architecture: all

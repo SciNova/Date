@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "Date"
-version = "1.0rc1"
+version = "1.0"
 description = "Gregorian date/time utilities (Date, Time, DateTime)"
 readme = { text = "Gregorian date/time utilities.", content-type = "text/plain" }
 requires-python = ">=3.8"
