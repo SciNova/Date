@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "Date"
-version = "0.3"
+version = "0.7"
 description = "Gregorian date/time utilities (Date, Time, DateTime) from Reuben Institute, for Gregorian calendar and Julian day calculations"
 readme = { text = "Gregorian date/time utilities (Date, Time, DateTime) from Reuben Institute, for Gregorian calendar and Julian day calculations.", content-type = "text/plain" }
-license = { text = "GPL-3.0-or-later" }
+license = "GPL-3.0-or-later"
 requires-python = ">=3.8"
 
 [tool.setuptools]
