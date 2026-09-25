@@ -6,5 +6,5 @@ Architecture: all
 Depends: python3
 Maintainer: Reuben Institute <reubeninstitute@gmail.com>
 Description: Gregorian date/time utilities
- Provides the Date module (Date, Time, DateTime classes) for
- Gregorian calendar and Julian day calculations.
+ Gregorian date/time utilities (Date, Time, DateTime) from Reuben
+ Institute, for Gregorian calendar and Julian day calculations.
