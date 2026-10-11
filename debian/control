@@ -9,5 +9,5 @@ Package: python3-date
 Architecture: all
 Depends: ${python3:Depends}, ${misc:Depends}
 Description: Gregorian date/time utilities
- Gregorian date/time utilities (Date, Time, DateTime) from SciNova,
- for Gregorian calendar and Julian day calculations.
+ Gregorian date/time utilities (Date, Time, DateTime) for Gregorian
+ calendar and Julian day calculations.
