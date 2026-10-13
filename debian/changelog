@@ -1,8 +1,0 @@
-date (0.12) unstable; urgency=medium
-
-  * Switch packaging from packaging/deb/ (dpkg-deb --build) to a proper
-    debian/ source package (dpkg-buildpackage), built with dh-python and
-    pybuild. Version is bumped here via debian/bump-version.sh before
-    each commit, same as before.
-
- -- SciNova <scinovasystems@gmail.com>  Sun, 11 Oct 2026 12:10:51 +0300
