@@ -1,0 +1,10 @@
+Package: python-date
+Version: @VERSION@
+Architecture: @ARCH@
+Maintainer: Reuben Institute <reubeninstitute@gmail.com>
+Installed-Size: @SIZE@
+Depends: @DEPENDS@
+Section: python
+Priority: optional
+Description: Gregorian date/time utilities (Date, Time, DateTime)
+ Julian day calculations, calendar utilities, Hebrew/English names.
