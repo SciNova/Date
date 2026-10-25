@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+
+PYTHON := python3
+PYVER := $(shell $(PYTHON) -c 'import sys; print("%d.%d" % sys.version_info[:2])')
+
+ifneq ($(filter deb-termux,$(MAKECMDGOALS)),)
+	PREFIX := /data/data/com.termux/files/usr
+	DEPENDS := python
+	OUT := $(CURDIR)/build/dist/termux
+else
+	PREFIX := /usr
+	DEPENDS := python3
+	OUT := $(CURDIR)/build/dist/deb
+endif
+
+SITE := $(PREFIX)/lib/python$(PYVER)/site-packages
+DOC := $(PREFIX)/share/doc/python-date
+STAGE := $(CURDIR)/build/staging
+
+.PHONY: deb deb-termux binary install clean
+
+deb: binary
+deb-termux: binary
+
+binary: install
+	sed -i "s|^Depends: .*|Depends: $(DEPENDS)|" $(STAGE)/DEBIAN/control
+	sed -i "s|^Installed-Size: .*|Installed-Size: $$(du -sk $(STAGE) | cut -f1)|" $(STAGE)/DEBIAN/control
+	find $(STAGE) -type d -exec chmod 0755 {} +
+	find $(STAGE) -type f -exec chmod 0644 {} +
+	mkdir -p $(OUT)
+	dpkg-deb -b -Zgzip -z6 $(STAGE) $(OUT)
+
+install:
+	rm -rf $(STAGE)
+	mkdir -p $(STAGE)$(SITE) $(STAGE)$(DOC) $(STAGE)/DEBIAN
+	install -m 0644 date.py __init__.py $(STAGE)$(SITE)/
+	install -m 0644 debian/control $(STAGE)/DEBIAN/control
+	install -m 0644 debian/copyright $(STAGE)$(DOC)/copyright
+	install -m 0644 LICENSE README.md $(STAGE)$(DOC)/
+
+clean:
+	rm -rf build

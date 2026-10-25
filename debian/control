@@ -1,9 +1,9 @@
 Package: python-date
-Version: @VERSION@
-Architecture: @ARCH@
+Version: 0.15
+Architecture: all
 Maintainer: Reuben Institute <reubeninstitute@gmail.com>
-Installed-Size: @SIZE@
-Depends: @DEPENDS@
+Installed-Size: 0
+Depends: python3
 Section: python
 Priority: optional
 Description: Gregorian date/time utilities (Date, Time, DateTime)
